@@ -1,0 +1,8 @@
+services:
+  test-service:
+    container_name: test
+    image: testing:v0.4
+    ports:
+      - "30000:8080"
+        #    network_mode: "host"
+
