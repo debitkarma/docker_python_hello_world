@@ -15,3 +15,11 @@ To start the image:
 To test the code:
 
 `curl http://localhost:30000/hello`
+
+## Caveats
+
+Some issues we saw on stream:
+
+- Applications running dev server inside docker containers usually bind to localhost. This means accessible only inside the docker container! You need to remember to bind the app to `0.0.0.0` inside the container to access it by port on the machine.
+- `docker-compose.yml` has its keywords pluralized, so it throws and attribute error for "service" and "port"
+- docker build commands allow you to specify the name of the image alongside the tag with `-t image_name:version_tag`
